@@ -1,0 +1,392 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, #202530 0%, #090a0d 45%, #050506 100%);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.bg-glow {
+  position: fixed;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: .18;
+  pointer-events: none;
+}
+
+.glow1 {
+  background: #007aff;
+  top: -120px;
+  left: -100px;
+}
+
+.glow2 {
+  background: #9b5cff;
+  right: -120px;
+  bottom: -100px;
+}
+
+header {
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 7%;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  backdrop-filter: blur(20px);
+  background: rgba(10,10,12,.65);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -.5px;
+}
+
+.apple {
+  width: 27px;
+  height: 27px;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  color: #111;
+  border-radius: 50%;
+  font-size: 10px;
+}
+
+.secure {
+  font-size: 11px;
+  color: #aaa;
+  letter-spacing: 2px;
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin: 55px auto;
+}
+
+.card {
+  padding: 38px;
+  border-radius: 28px;
+  background: rgba(20,22,27,.86);
+  border: 1px solid rgba(255,255,255,.1);
+  box-shadow: 0 30px 80px rgba(0,0,0,.45);
+  animation: appear .45s ease;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+.step {
+  color: #6ea8ff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+h1 {
+  font-size: 36px;
+  letter-spacing: -1.5px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: #9297a1;
+  margin-bottom: 30px;
+}
+
+.series-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.series {
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(255,255,255,.035);
+  border: 1px solid rgba(255,255,255,.07);
+  transition: .25s;
+}
+
+.series:hover {
+  transform: translateY(-3px);
+  border-color: rgba(100,160,255,.4);
+}
+
+.series h2 {
+  font-size: 19px;
+  margin-bottom: 14px;
+}
+
+.series button {
+  width: 100%;
+  padding: 12px 14px;
+  margin-top: 8px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.08);
+  background: #111318;
+  color: #ddd;
+  cursor: pointer;
+  text-align: left;
+  transition: .2s;
+}
+
+.series button:hover,
+.series button.active {
+  background: #1769e0;
+  color: white;
+  border-color: #3887ff;
+  transform: translateX(3px);
+}
+
+.selected {
+  margin-top: 25px;
+  padding: 15px 18px;
+  border-radius: 14px;
+  background: rgba(0,122,255,.08);
+  border: 1px solid rgba(0,122,255,.18);
+  color: #9da5b3;
+}
+
+.selected strong {
+  color: white;
+}
+
+.next-btn,
+.pay-btn,
+.back-btn {
+  border: 0;
+  cursor: pointer;
+  border-radius: 14px;
+  padding: 15px 25px;
+  font-size: 15px;
+  font-weight: 700;
+  transition: .25s;
+}
+
+.next-btn {
+  margin-top: 20px;
+  background: linear-gradient(135deg, #1478ff, #4d9cff);
+  color: white;
+  box-shadow: 0 10px 30px rgba(20,120,255,.25);
+}
+
+.next-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(20,120,255,.35);
+}
+
+.next-btn.small {
+  margin-top: 0;
+}
+
+.back-btn {
+  background: #25282e;
+  color: #ddd;
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+label {
+  display: block;
+  margin: 20px 0 8px;
+  font-size: 13px;
+  color: #b8bdc8;
+}
+
+input {
+  width: 100%;
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid #30343c;
+  outline: none;
+  background: #0d0f13;
+  color: white;
+  font-size: 15px;
+  transition: .2s;
+}
+
+input:focus {
+  border-color: #3182ff;
+  box-shadow: 0 0 0 3px rgba(49,130,255,.12);
+}
+
+.model-box {
+  display: flex;
+  justify-content: space-between;
+  padding: 17px;
+  border-radius: 14px;
+  background: rgba(255,255,255,.04);
+  color: #aaa;
+}
+
+.model-box strong {
+  color: white;
+}
+
+.payment-box {
+  margin-top: 20px;
+  padding: 25px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #15171c, #0d0e11);
+  border: 1px solid rgba(255,255,255,.09);
+}
+
+.jazz-logo {
+  font-size: 28px;
+  font-weight: 800;
+  color: #ff1744;
+  margin-bottom: 25px;
+}
+
+.payment-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255,255,255,.07);
+  color: #9297a1;
+}
+
+.payment-row:last-child {
+  border-bottom: 0;
+}
+
+.payment-row strong {
+  color: white;
+}
+
+.notice {
+  margin-top: 20px;
+  padding: 16px;
+  border-radius: 14px;
+  background: rgba(255,190,60,.07);
+  border: 1px solid rgba(255,190,60,.15);
+  color: #c7b98d;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.pay-btn {
+  width: 100%;
+  margin-top: 20px;
+  background: linear-gradient(135deg, #ff1744, #ff4d6d);
+  color: white;
+}
+
+.pay-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(255,23,68,.25);
+}
+
+.pending {
+  text-align: center;
+  margin-top: 30px;
+  padding: 30px;
+  border-radius: 20px;
+  background: rgba(30,200,120,.06);
+  border: 1px solid rgba(30,200,120,.2);
+}
+
+.check {
+  width: 55px;
+  height: 55px;
+  margin: auto auto 15px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #18a96b;
+  font-size: 25px;
+}
+
+.pending h2 {
+  margin-bottom: 8px;
+}
+
+.pending p {
+  color: #999;
+  margin-bottom: 12px;
+}
+
+.pending span {
+  color: #4edb9a;
+  font-size: 13px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #555;
+  font-size: 12px;
+}
+
+@media (max-width: 700px) {
+
+  header {
+    padding: 0 5%;
+  }
+
+  .secure {
+    display: none;
+  }
+
+  .container {
+    margin: 25px auto;
+  }
+
+  .card {
+    padding: 22px;
+    border-radius: 22px;
+  }
+
+  h1 {
+    font-size: 29px;
+  }
+
+  .series-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .payment-row {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .buttons button {
+    width: 100%;
+  }
+}
