@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iCloud Remover - Service Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="bg-glow glow1"></div>
+  <div class="bg-glow glow2"></div>
+
+  <header>
+    <div class="brand">
+      <span class="apple">●</span>
+      <span>iCloud Remover</span>
+    </div>
+    <div class="secure">SERVICE PORTAL</div>
+  </header>
+
+  <main class="container">
+
+    <!-- STEP 1 -->
+    <section id="step1" class="card">
+      <div class="step">STEP 1 OF 3</div>
+      <h1>Select iPhone</h1>
+      <p class="subtitle">Choose your iPhone series and model.</p>
+
+      <div class="series-grid">
+
+        <div class="series">
+          <h2>iPhone 11</h2>
+          <button onclick="selectModel('iPhone 11')">iPhone 11</button>
+          <button onclick="selectModel('iPhone 11 Pro')">iPhone 11 Pro</button>
+          <button onclick="selectModel('iPhone 11 Pro Max')">iPhone 11 Pro Max</button>
+        </div>
+
+        <div class="series">
+          <h2>iPhone 12</h2>
+          <button onclick="selectModel('iPhone 12')">iPhone 12</button>
+          <button onclick="selectModel('iPhone 12 mini')">iPhone 12 mini</button>
+          <button onclick="selectModel('iPhone 12 Pro')">iPhone 12 Pro</button>
+          <button onclick="selectModel('iPhone 12 Pro Max')">iPhone 12 Pro Max</button>
+        </div>
+
+        <div class="series">
+          <h2>iPhone 13</h2>
+          <button onclick="selectModel('iPhone 13')">iPhone 13</button>
+          <button onclick="selectModel('iPhone 13 mini')">iPhone 13 mini</button>
+          <button onclick="selectModel('iPhone 13 Pro')">iPhone 13 Pro</button>
+          <button onclick="selectModel('iPhone 13 Pro Max')">iPhone 13 Pro Max</button>
+        </div>
+
+        <div class="series">
+          <h2>iPhone 14</h2>
+          <button onclick="selectModel('iPhone 14')">iPhone 14</button>
+          <button onclick="selectModel('iPhone 14 Plus')">iPhone 14 Plus</button>
+          <button onclick="selectModel('iPhone 14 Pro')">iPhone 14 Pro</button>
+          <button onclick="selectModel('iPhone 14 Pro Max')">iPhone 14 Pro Max</button>
+        </div>
+
+        <div class="series">
+          <h2>iPhone 15</h2>
+          <button onclick="selectModel('iPhone 15')">iPhone 15</button>
+          <button onclick="selectModel('iPhone 15 Plus')">iPhone 15 Plus</button>
+          <button onclick="selectModel('iPhone 15 Pro')">iPhone 15 Pro</button>
+          <button onclick="selectModel('iPhone 15 Pro Max')">iPhone 15 Pro Max</button>
+        </div>
+
+      </div>
+
+      <div class="selected">
+        Selected: <strong id="selectedModel">None</strong>
+      </div>
+
+      <button class="next-btn" onclick="goToDetails()">Continue →</button>
+    </section>
+
+
+    <!-- STEP 2 -->
+    <section id="step2" class="card hidden">
+      <div class="step">STEP 2 OF 3</div>
+
+      <h1>Device Details</h1>
+      <p class="subtitle">
+        Enter the device information for service verification.
+      </p>
+
+      <div class="model-box">
+        Selected Model
+        <strong id="modelOutput"></strong>
+      </div>
+
+      <label>iPhone Serial Number</label>
+      <input
+        type="text"
+        id="serial"
+        placeholder="Enter Serial Number"
+        maxlength="30"
+      >
+
+      <label>iPhone IMEI</label>
+      <input
+        type="text"
+        id="imei"
+        placeholder="Enter IMEI"
+        maxlength="15"
+      >
+
+      <div class="buttons">
+        <button class="back-btn" onclick="backToModels()">← Back</button>
+        <button class="next-btn small" onclick="goToPayment()">Next →</button>
+      </div>
+    </section>
+
+
+    <!-- STEP 3 -->
+    <section id="step3" class="card hidden">
+      <div class="step">STEP 3 OF 3</div>
+
+      <h1>Service Payment</h1>
+      <p class="subtitle">
+        Complete the service payment and submit your request for verification.
+      </p>
+
+      <div class="payment-box">
+
+        <div class="jazz-logo">JazzCash</div>
+
+        <div class="payment-row">
+          <span>JazzCash Number</span>
+          <strong>03211073755</strong>
+        </div>
+
+        <div class="payment-row">
+          <span>Account Name</span>
+          <strong>Rasheedan</strong>
+        </div>
+
+      </div>
+
+      <div class="notice">
+        <strong>Important:</strong>
+        Your service request will remain pending until the submitted
+        information and payment are verified.
+      </div>
+
+      <button class="pay-btn" onclick="submitRequest()">
+        Send Payment / Submit Request
+      </button>
+
+      <div id="pending" class="pending hidden">
+        <div class="check">✓</div>
+        <h2>Request Pending</h2>
+        <p>
+          Your service request has been submitted successfully.
+        </p>
+        <span>Verification Status: Pending</span>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    iCloud Remover Service Portal • Customer Request System
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
